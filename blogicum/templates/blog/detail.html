@@ -12,7 +12,7 @@
     <p>Дата: {{ posts.date }}</p>
   </li>
   <li>
-    <p>Категория: {{ posts.category }}</p>
+    <p>Категория:  <a href="{% url 'blog:category_posts' category_slug=posts.category %}"> {{ posts.category }} </a></p>
   </li>
 </ul>
     <p>{{ posts.text}}</p>
