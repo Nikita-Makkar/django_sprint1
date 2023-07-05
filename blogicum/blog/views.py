@@ -50,7 +50,7 @@ def index(request):
     return render(request, template, context)
 
 
-def post_detail(request, pk:int):
+def post_detail(request, pk: int):
     template = 'blog/detail.html'
     context = {'posts': posts[pk]}
     return render(request, template, context)
