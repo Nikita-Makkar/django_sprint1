@@ -41,21 +41,21 @@ posts = [
                 Весь этот день я хлопотал  около вещей: укрывал и
                 укутывал их, чтобы не испортились от дождя.''',
     },
-] 
+]
 
 
 def index(request):
     template = 'blog/index.html'
-    context = {'posts_posts': posts }
+    context = {'posts_posts': posts}
     return render(request, template, context)
 
 
 def post_detail(request, pk:int):
     template = 'blog/detail.html'
-    context = {'posts': posts[pk],}
+    context = {'posts': posts[pk]}
     return render(request, template, context)
-  
-  
+
+
 def category_posts(request, category_slug):
     template = 'blog/category.html'
     context = {'category_slug': category_slug}
