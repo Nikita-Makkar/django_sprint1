@@ -5,12 +5,13 @@
 {% endblock %}
 {% block content %}
   <h1>Лента записей</h1>
+  <br>
     <ul>
     {% for blog in posts_posts %}
       <li>
         <p> Место: {{ blog.location }}</p>
-        <p>Дата:{{ blog.date }}</p>
-        <p>Категория: <a href="{% url 'blog:category_posts' category_slug=blog.category %}"> {{ blog.category }} </a> </p>
+        <li> <p>Дата:{{ blog.date }}</p> </li>
+          <li> <p>Категория: <a href="{% url 'blog:category_posts' category_slug=blog.category %}"> {{ blog.category }} </a> </p> </li>
         <p>{{ blog.text|truncatewords:10 }}</p>
         <a href="{% url 'blog:post_detail' pk=blog.id %}" >Читатать полный текст</a>
         <hr>

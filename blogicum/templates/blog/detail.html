@@ -15,5 +15,5 @@
     <p>Категория:  <a href="{% url 'blog:category_posts' category_slug=posts.category %}"> {{ posts.category }} </a></p>
   </li>
 </ul>
-    <p>{{ posts.text}}</p>
+    <p>{{ posts.text|linebreaksbr}}</p>
 {% endblock %}
