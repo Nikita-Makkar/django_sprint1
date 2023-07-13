@@ -51,7 +51,6 @@ def index(request):
     context = {'posts_posts': posts}
     return render(request, template, context)
 
-
 def post_detail(request, pk: int):
     template = 'blog/detail.html'
     try:
