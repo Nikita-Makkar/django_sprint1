@@ -48,16 +48,18 @@ posts = [
 
 def index(request):
     template = 'blog/index.html'
-    context = {'posts_posts': posts}
+    context = {'posts_posts': reversed(posts)}
     return render(request, template, context)
 
+
 def post_detail(request, pk: int):
-    template = 'blog/detail.html'
     try:
-        context = {'posts': posts[pk]}
-        return render(request, template, context)
+        post = posts[pk]
     except IndexError:
         raise Http404("Post not exist")
+    template = 'blog/detail.html'
+    context = {'post': post}
+    return render(request, template, context)
 
 
 def category_posts(request, category_slug):
