@@ -1,6 +1,5 @@
-from django.shortcuts import render
 from django.http import Http404
-
+from django.shortcuts import render
 
 posts = [
     {
@@ -47,9 +46,8 @@ posts = [
 
 
 def index(request):
-    template = 'blog/index.html'
     context = {'posts_posts': reversed(posts)}
-    return render(request, template, context)
+    return render(request, 'blog/index.html', context)
 
 
 def post_detail(request, pk: int):
@@ -57,12 +55,10 @@ def post_detail(request, pk: int):
         post = posts[pk]
     except IndexError:
         raise Http404("Post not exist")
-    template = 'blog/detail.html'
     context = {'post': post}
-    return render(request, template, context)
+    return render(request, 'blog/detail.html', context)
 
 
 def category_posts(request, category_slug):
-    template = 'blog/category.html'
     context = {'category_slug': category_slug}
-    return render(request, template, context)
+    return render(request, 'blog/category.html', context)
