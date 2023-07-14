@@ -1,0 +1,12 @@
+{% load static %}
+<ul>
+  <li>
+    <p>Место: {{ post.location }}</p>
+  </li>
+  <li>
+    <p>Дата: {{ post.date }}</p>
+  </li>
+  <li>
+    <p>Категория:  <a href="{% url 'blog:category_posts' category_slug=post.category %}"> {{ post.category }} </a></p>
+  </li>
+</ul>
